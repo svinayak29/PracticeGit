@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashSet;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -29,6 +31,13 @@ public class Git_Runner {
 		 Actions actions = new Actions(driver);
 		 actions.moveToElement(searchBar).pause(3000).click(searchBar).pause(3000).perform();
 		 actions.sendKeys(searchBar, "dil ibadat kr rha h").perform();
+		 WebElement text = driver.findElement(By.xpath("//ul[@class='sbsb_b']"));
+		String value = text.getText();
+		 ArrayList<String> a = new ArrayList<>();
+		 a.add(value);
+		 HashSet<String> h = new HashSet<String>(a);
+		  System.out.println(a);
+		  System.out.println(value);
 		 WebElement searchSong = driver.findElement(By.xpath("//ul[@class='sbsb_b']/..//div[@id='sbse0']"));
 		 searchSong.click();
 		 
